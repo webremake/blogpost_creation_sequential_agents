@@ -1,7 +1,7 @@
 [project]
 name = "blog-post-creation-with-sequential-agents"
 version = "0.1.0"
-description = "A project to create blog posts using sequential agents."
+description = "A project to create blog posts using sequential agents, created with Google ADK."
 authors = [
   { name = "Your Name", email = "your@email.com" }
 ]
