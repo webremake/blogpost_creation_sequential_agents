@@ -1,0 +1,15 @@
+[project]
+name = "blog-post-creation-with-sequential-agents"
+version = "0.1.0"
+description = "A project to create blog posts using sequential agents."
+authors = [
+  { name = "Your Name", email = "your@email.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">= 3.12.2"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/your-username/your-repository"
+Repository = "https://github.com/your-username/your-repository"

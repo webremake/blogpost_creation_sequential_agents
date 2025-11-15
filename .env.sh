@@ -1,0 +1,6 @@
+#!/bin/bash
+# Авто-активация локального .venv
+if [ -d ".venv" ]; then
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
+fi
