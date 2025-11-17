@@ -79,7 +79,7 @@ async def main():
     Асинхронная функция для запуска агентов.
     """
     print("🚀 Starting agent execution...")
-    runner = InMemoryRunner(agent=root_agent)
+    runner = InMemoryRunner(agent=root_agent, app_name="agents")
     
     # Используем await внутри async-функции
     response = await runner.run_debug(
