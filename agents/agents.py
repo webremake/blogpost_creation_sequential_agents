@@ -82,7 +82,7 @@ async def main():
     runner = InMemoryRunner(agent=root_agent, app_name="agents")
     
     # Используем await внутри async-функции
-    response = await runner.run_debug(
+    response = await runner.arun(
         "What is the difference between google и Yandex?."
     )
     
