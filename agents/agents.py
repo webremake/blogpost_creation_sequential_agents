@@ -82,12 +82,18 @@ async def main():
     runner = InMemoryRunner(agent=root_agent, app_name="agents")
     
     # Используем await внутри async-функции
-    response = await runner.arun(
+    events = await runner.run_async(
         "What is the difference between google и Yandex?."
     )
     
+    final_response_text = ""
+    for event in reversed(events):
+        if event.content and event.content.parts and event.content.parts[0].text and event.content.role == 'model':
+            final_response_text = event.content.parts[0].text
+            break
+    
     print("\n--- Final Result ---")
-    print(response)
+    print(final_response_text)
 
 if __name__ == "__main__":
     # Запускаем асинхронную функцию main
