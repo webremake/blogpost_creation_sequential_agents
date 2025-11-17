@@ -8,7 +8,9 @@ authors = [
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">= 3.12.2"
-dependencies = []
+dependencies = [
+    "google-adk == 1.18.0"
+]
 
 [project.urls]
 Homepage = "https://github.com/your-username/your-repository"
