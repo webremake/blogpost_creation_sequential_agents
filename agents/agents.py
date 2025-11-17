@@ -83,7 +83,8 @@ async def main():
     
     # Используем await внутри async-функции
     events = await runner.run_debug(
-        "What is the difference between google и Yandex?."
+        "What is the difference between google и Yandex?.",
+        quiet=True
     )
     
     final_response_text = ""
