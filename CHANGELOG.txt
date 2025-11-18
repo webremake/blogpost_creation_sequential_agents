@@ -1,6 +1,0 @@
-# Changelog
-
-## 2025-11-18
-
-### Added
-- Dynamic query with argparse: The research query can now be passed as a command-line argument.
