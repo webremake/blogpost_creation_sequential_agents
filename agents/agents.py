@@ -1,11 +1,17 @@
 import asyncio
 from dotenv import load_dotenv
+import argparse
 
 load_dotenv()
 
 GEMINI_MODEL_NAME = "gemini-2.5-flash-lite"
 RESEARCH_FINDINGS_KEY = "research_findings"
 FINAL_SUMMARY_KEY = "final_summary"
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Run the research agent workflow.")
+    parser.add_argument("query", type=str, help="The topic to research.")
+    return parser.parse_args()
 
 # pip install google-adk
 
@@ -78,12 +84,13 @@ async def main():
     """
     Асинхронная функция для запуска агентов.
     """
+    args = parse_arguments()
     print("🚀 Starting agent execution...")
     runner = InMemoryRunner(agent=root_agent, app_name="agents")
     
     # Используем await внутри async-функции
     events = await runner.run_debug(
-        "What is the difference between google и Yandex?.",
+        args.query,
         quiet=True
     )
     
