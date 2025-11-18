@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Dynamic query with argparse: The research query can now be passed as a command-line argument.
+- Add --debug flag for verbose output: An optional command-line flag to enable detailed debug logging.
 
 ## [0.1.0] - 2025-11-17
 

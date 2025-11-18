@@ -57,14 +57,21 @@ The application requires a Google API key to interact with the Gemini models.
 
 ## Usage
 
-To run the application, execute the main agent script from your terminal.
+To run the application, execute the main agent script from your terminal, providing a research topic as an argument.
 
 ```bash
 # Run the agent workflow
-python agents/agents.py
+python agents/agents.py "Your research topic here"
 ```
 
-The script will then perform the research and summarization for the hardcoded query and print the final result to the console.
+To see detailed logs of the agent's execution, you can use the `--debug` flag:
+
+```bash
+# Run in debug mode
+python agents/agents.py "Your research topic here" --debug
+```
+
+The script will then perform the research and summarization for the provided query and print the final result to the console.
 
 ## Project Structure
 
