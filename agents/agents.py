@@ -11,6 +11,7 @@ FINAL_SUMMARY_KEY = "final_summary"
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Run the research agent workflow.")
     parser.add_argument("query", type=str, help="The topic to research.")
+    parser.add_argument("--debug", "-d", action="store_true", help="Enable debug output.")
     return parser.parse_args()
 
 # pip install google-adk
@@ -91,8 +92,14 @@ async def main():
     # Используем await внутри async-функции
     events = await runner.run_debug(
         args.query,
-        quiet=True
+        quiet=not args.debug
     )
+    
+    if args.debug:
+        print("\n--- All Events ---")
+        for event in events:
+            print(event)
+        print("--- End All Events ---")
     
     final_response_text = ""
     for event in reversed(events):
