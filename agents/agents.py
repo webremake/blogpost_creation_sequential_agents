@@ -22,6 +22,8 @@ from google.adk.models.google_llm import Gemini
 from google.adk.runners import InMemoryRunner
 from google.adk.tools import AgentTool, FunctionTool, google_search
 from google.genai import types
+from rich.console import Console
+from rich.markdown import Markdown
 
 print("✅ ADK components imported successfully.")
 
@@ -108,7 +110,11 @@ async def main():
             break
     
     print("\n--- Final Result ---")
-    print(final_response_text)
+    if final_response_text:
+        console = Console()
+        console.print(Markdown(final_response_text))
+    else:
+        print("No final response text found.")
 
 if __name__ == "__main__":
     # Запускаем асинхронную функцию main
