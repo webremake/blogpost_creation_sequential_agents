@@ -43,11 +43,18 @@ GOOGLE_API_KEY="your_api_key_here"
 
 ### 4. Run the Application
 
-The main script can be executed directly from the command line.
+The main script can be executed directly from the command line, providing a research topic as an argument.
 
 ```bash
 # Run the agent workflow
-python agents/agents.py
+python agents/agents.py "Your research topic here"
+```
+
+To see detailed logs of the agent's execution, you can use the `--debug` flag:
+
+```bash
+# Run in debug mode
+python agents/agents.py "Your research topic here" --debug
 ```
 
 ## Development Conventions
